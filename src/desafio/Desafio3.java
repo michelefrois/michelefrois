@@ -43,27 +43,24 @@ public class Desafio3 {
   
  
 //--------------------------------------------------------------
-//Método de deletar ....
+//Método de remoção ....
 //--------------------------------------------------------------
-/*  public boolean remove(String nomebusca)
-      { 
-        boolean e = false;
-        int j;
-        
-        for(j=0; j<nElems.lenght; j++){            // varrerá o vetor buscando ...
-            if (nomebusca.equals(nome[j])) 
-            {
-                boolean [j]remove = nome.remove[j];
-                if (nome[j] == null)
-                    nome[j] = j+1;                  
-                System.out.println("Nome: " + nome[j] + "Excluído com Sucesso!!!");     
-                e = true;
-            }             
-        
-        return e;
-
-      }  // fim da busca 
-} */
+   public boolean delete(String value)
+      {
+      int j;
+      for(j=0; j<nElems; j++)        // varre o vetor 
+         if( value.equals(nome[j]) )
+            break;
+      if(j==nElems)                  // se não encontrar retorna falso
+         return false;
+      else                           // se encontrar ...
+         {
+         for(int k=j; k<nElems; k++) // move os mais altos para "frente"
+            nome[k] = nome[k+1];
+         nElems--;                   // decrementa o contador de elementos
+         return true;
+         }
+      }  // final do método de remoção
 //--------------------------------------------------------------
 //Método de inserção ....
 //--------------------------------------------------------------
@@ -106,16 +103,19 @@ class Usuario3
        
        //Pedir para o usuario digitar um nome
        System.out.println("Digite um nome para busca: ");
-       arr.buscaA(nome.nextLine());
+       arr.buscaA(nome.nextLine());          
+       if( !arr.buscaA(nome.nextLine()))
+         System.out.println("Não encontrei o nome procurado!!!");
        
        //Pedir para o usuario digitar um nome p/ excluir do vetor
-       //System.out.println("Digite um nome para exclusão: ");
-       //arr.remove(nome.nextLine());
-       
+       System.out.println("Digite um nome para exclusão: ");
+       arr.delete(nome.nextLine());
        //Chama o metodo da classe Desafio2 que ira imprimir os nomes que comecarem com
        //essa letra
        if( !arr.buscaA(nome.nextLine()))
          System.out.println("Não encontrei o nome procurado!!!");
+       
+       arr.display();
 }
    
 }
