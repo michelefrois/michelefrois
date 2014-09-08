@@ -17,7 +17,7 @@ public class Jogador
    private double altura;
 //--------------------------------------------------------------
    public Jogador(String n, double a, int id)
-      {                               // comentario aqui
+      {                               
       nome = n;
       altura = a;
       idade = id;
@@ -25,7 +25,7 @@ public class Jogador
 //--------------------------------------------------------------
    public void displayJogador()
       {
-      System.out.print("   Nome: " + nome);
+      System.out.print(" Nome: " + nome);
       System.out.println(", Idade: " + idade);
       System.out.print(", Altura: " + altura);
       }
@@ -33,6 +33,7 @@ public class Jogador
    public int getIdade()           
       { return idade; }
 
+   
   public String getName()           
       { return nome; }
   

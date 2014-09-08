@@ -24,36 +24,44 @@ public class Usuaria {
               int maxSize = 100;            // coloca em uma constante o tamanho do vetor
               Estrutura arr = new Estrutura(maxSize); // instancia a estrutura de dados
               Scanner entrada = new Scanner (System.in); //Instancio o objeto entrada do tipo Scanner
-              Scanner entradaint = new Scanner (System.in);
-              System.out.println("Seja Bem Vindo!!!");
+             // Scanner entradanum = new Scanner (System.in);
+              System.out.println("Seja Bem Vindo Jogadores!!!");
               
-              for (int i = 1; i < 6; i++) {
-                 System.out.println("Digite o nome " + i);
-                 String nome = entrada.nextLine();                  
-                 System.out.println("Digite a altura do(a) " + nome);
-                 double altura = entradaint.nextDouble();
-                 System.out.println("Digite a idade do(a) " + nome);
-                 int idade = entradaint.nextInt();
+              for (int i = 0; i < 2; i++) {
+                System.out.println("\nDigite o nome do " + i + "° jogador: ");
+                String nome = entrada.nextLine();                  
+                 
+                System.out.println("Digite a altura do " + i + "° jogador: ");
+                double altura = entrada.nextDouble();
+                  
+                System.out.println("Digite a idade do " + i + "° jogador: ");
+                int idade = entrada.nextInt();
+                 
+                entrada.nextLine();  
+                 
                  arr.insert(nome, altura, idade);
               }
-
-              System.out.println("Muito Bem! Agora que você cadastrou os Jogadores, digite uma Idade");
-
-              if (!arr.findy(entrada.nextLine()))
-                  System.out.println("Não encontrado nenhum nome!!");
               
-              System.out.println("Digite um nome para buscar:");
-              
-              int posicao = arr.findByIdade(entradaint.nextLine());
-              
-              if (posicao != arr.size())
-                    System.out.println("Encontrei na posicao" + posicao );
-              else
-                    System.out.println("Não encontrado");
-              
-              System.out.println("Digite um nome ser removido:");
-                        
+              System.out.println("\n\n");
               arr.display();
-          }      
+              System.out.println("\n Muito Bem! Agora que você cadastrou os Jogadores, digite uma Idade: ");
+          
+              System.out.println("\n \nDigite a idade a ser pesquisada: ");  
+              int buscaid = entrada.nextInt();             
+              
+              if(arr.findByIdade(buscaid) == 0)
+              {
+                System.out.println(buscaid + " ---> Idade não encontrada!!!");  
+              }
+              
+              System.out.println("\nDigite um nome a ser pesquisado: "); 
+              entrada.nextLine();
+              
+              String nome = entrada.nextLine();
+              arr.findNome(nome);
+              
+              arr.display();
+          }    
+    
           
 }

@@ -6,6 +6,7 @@
 
 package er1;
 
+
 /**
  *
  * @author aleaguado
@@ -43,12 +44,12 @@ class Estrutura  //Criamos aqui nossa classe EstruturaVetor
             for(int i = curIn; (vj[i].getIdade() == buscaid); i++)   
             {   
                 vj[i].displayJogador();
-                System.out.println("==============================================");
+                System.out.println("Idade encontrada!");
             }     
             for (int i = curIn-1; (vj[i].getIdade() == buscaid); i--) 
             { 
                  vj[i].displayJogador();
-                 System.out.println("==============================================");
+                 System.out.println("Idade encontrada!");
             }
             return curIn; // encontrei!
          }
@@ -85,18 +86,25 @@ class Estrutura  //Criamos aqui nossa classe EstruturaVetor
 //Busca linear por nome!!!
 //--------------------------------------------------------------
     public boolean findNome(String nome)
-      {                              // metodo buscará o valor que a classe usuaria pedir ...
+    {                              // metodo buscará o valor que a classe usuaria pedir ...
       int j;
-      for(j=0; j<nElems; j++)            // varrerá o vetor buscando ...
-         if(vj[j].toUpperCase().equals(nome.toUpperCase()))           // encontrou o item?
-            break;                       // sai do for antes de finalizar ...
-       return j != nElems;
-      }  // fim da busca    
+      for(j=0; j<nElems; j++){            // varrerá o vetor buscando ...
+         if(vj[j].getName().equals(nome))           // encontrou o item?
+         {
+            System.out.println("Nome encontrado!!!" + nome);
+            break;  // sai do for antes de finalizar ...
+         }                           
+         else
+            System.out.println("Nome não existente!!" + nome); 
+        
+      } 
+      return j != nElems;
+    }
 
 //--------------------------------------------------------------
 //Método de visualização ....
 //--------------------------------------------------------------
-   public void display()             // mostra o conteúdo do vetor
+   public void display()
       {
       for(int j=0; j<nElems; j++)      
          vj[j].displayJogador();
