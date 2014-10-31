@@ -27,7 +27,7 @@ public class EstruturaLista {
 
     public String displayNomes()
     {
-    return (" \nSeu nome: " + nome + " De uma pessoa especial: " + Pessoaespecial);
+    return (" \nSeu nome: " + nome + " \nDe uma pessoa especial: " + Pessoaespecial);
     }
 
     public EstruturaLista getNext()
