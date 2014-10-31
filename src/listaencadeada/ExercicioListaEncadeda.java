@@ -17,12 +17,13 @@ public class ExercicioListaEncadeda {
         
         lp.print();
         System.out.println("------------------------------------");
-        System.out.println("------------Deletar------------------");
+        System.out.println("------------Deletar-----------------");
         System.out.println("------------------------------------");
         lp.deletFirst();
+       
         lp.print();
         System.out.println("------------------------------------");
-        System.out.println("-----------Buscar Michele------------");
+        System.out.println("-----------Buscar Michele-----------");
         System.out.println("------------------------------------");
         
         lp.findname("Michele");
